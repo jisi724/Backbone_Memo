@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Backbone Memo</title>
+	<script src='js/lib/underscore.js'></script>
+	<script src='js/lib/jquery.js'></script>
+	<script src='js/lib/backbone.js'></script>
+	<script src='js/lib/md5.js'></script>
+	<script src='js/app/base.js'></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style type="text/css">
+		.sp-close {
+			position: absolute;
+			right:10px;
+			top:10px;
+		}
+		.sp-page {
+			max-width:640px;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div class="container sp-page" id="page-issue-list">
+		<h1>Mome</h1>
+		<a href="#issue/new" class="btn btn-success">New Mome</a>
+		<p></p>
+		<div id="issue-list" class="list-group">
+		</div>
+	</div>
+
+	<div class="container sp-page" id="page-issue-create">
+		<h1>New</h1>
+		<form class="form-horizontal">
+			<!--title-->
+			<div class="form-group">
+				<label for="title" class="col-sm-2 control-label"> Title </label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="title" placeholder="title">
+				</div>
+			</div>
+			<!--description-->
+			<div class="form-group">
+				<label for="description" class="col-sm-2 control-label"> Description </label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="description" placeholder="descriptiom">
+				</div>
+			</div>
+			<!--save button-->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button id="btn-save" class="btn btn-success"> Save </button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="container sp-page" id="page-issue-edit">
+		<h1>Edit</h1>
+		<form class="form-horizontal">
+			<!--title-->
+			<div class="form-group">
+				<label for="title" class="col-sm-2 control-label"> Title </label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="title-edit" placeholder="title">
+				</div>
+			</div>
+			<!--description-->
+			<div class="form-group">
+				<label for="description" class="col-sm-2 control-label"> Description </label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="description-edit" placeholder="descriptiom">
+				</div>
+			</div>
+			<!--save button-->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button id="btn-save-edit" class="btn btn-success"> Save </button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!--render template (from underscore.js)-->
+	<script type="text/template" id="issue-item-view">
+		<h4><%= title %>     <small><%= objectId %></small></h4>
+		<p><%= description %></p>
+		<button type="button" class="close sp-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	</script>
+
+	<!--put script in main to control all the body content-->
+	<script src="js/app/main.js"></script>
+</body>
+</html>
