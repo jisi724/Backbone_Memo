@@ -1,5 +1,5 @@
 # Backbone_Memo
-key words: backbone, leancloud, restful, single-page web app
+<strong>key words: backbone, leancloud, restful, single-page web app</strong>
 
 This is demo for a super basic, but also important backbone.js based single page web app
 All the basic operations like add, delete and modify can be done with this memo app
